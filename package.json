@@ -1,5 +1,5 @@
 {
-  "name": "example",
+  "name": "rehype-blockquote-figures",
   "version": "1.0.0",
   "type": "module",
   "description": "rehype plugin to wrap blockquotes in figures",
