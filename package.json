@@ -2,12 +2,16 @@
   "name": "example",
   "version": "1.0.0",
   "type": "module",
-  "description": "",
-  "main": "index.js",
+  "description": "rehype plugin to wrap blockquotes in figures",
+  "repository": "https://github.com/rwblickhan/rehype-blockquote-figures",
+  "author": "R. W. Blickhan <rwb@rwblickhan.org> (https://rwblickhan.org)",
+  "exports": "./plugin.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "rehype-plugin"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
