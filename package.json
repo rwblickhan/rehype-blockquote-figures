@@ -12,7 +12,6 @@
   "keywords": [
     "rehype-plugin"
   ],
-  "author": "",
   "license": "ISC",
   "dependencies": {
     "unist-util-visit": "^5.0.0"
