@@ -7,7 +7,7 @@
   "author": "R. W. Blickhan <rwb@rwblickhan.org> (https://rwblickhan.org)",
   "exports": "./plugin.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test test/*.test.js"
   },
   "keywords": [
     "rehype-plugin"
@@ -15,5 +15,13 @@
   "license": "ISC",
   "dependencies": {
     "unist-util-visit": "^5.0.0"
+  },
+  "devDependencies": {
+    "rehype": "^13.0.1",
+    "rehype-stringify": "^10.0.1",
+    "remark": "^15.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.0",
+    "unified": "^11.0.5"
   }
 }
