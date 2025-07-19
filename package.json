@@ -1,6 +1,6 @@
 {
   "name": "rehype-blockquote-figures",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
   "description": "rehype plugin to wrap blockquotes in figures",
   "repository": "https://github.com/rwblickhan/rehype-blockquote-figures",
