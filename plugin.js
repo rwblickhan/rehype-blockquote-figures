@@ -13,11 +13,10 @@ export default function rehypeBlockquoteFigures() {
       // Find the next non-text sibling that's a list
       let nextListSibling = null;
       let nextListIndex = -1;
-      
+
       for (let i = index + 1; i < parent.children.length; i++) {
         const sibling = parent.children[i];
-        if (sibling.type === "element" && 
-            (sibling.tagName === "ul" || sibling.tagName === "ol")) {
+        if (sibling.type === "element" && sibling.tagName === "ul") {
           nextListSibling = sibling;
           nextListIndex = i;
           break;
@@ -27,27 +26,29 @@ export default function rehypeBlockquoteFigures() {
         }
         // Continue if it's just text (like whitespace)
       }
-      
+
       const isFollowedByList = nextListSibling !== null;
 
       if (isFollowedByList && nextListSibling.children.length > 0) {
         // Get the first list item (skip text nodes)
-        const firstListItem = nextListSibling.children.find(child => 
-          child.type === "element" && child.tagName === "li"
+        const firstListItem = nextListSibling.children.find(
+          (child) => child.type === "element" && child.tagName === "li"
         );
-        
+
         if (firstListItem) {
           // Remove the first list item from the list
-          nextListSibling.children = nextListSibling.children.filter(child => child !== firstListItem);
-          
+          nextListSibling.children = nextListSibling.children.filter(
+            (child) => child !== firstListItem
+          );
+
           // If the list has no more list items, remove it entirely
-          const hasListItems = nextListSibling.children.some(child => 
-            child.type === "element" && child.tagName === "li"
+          const hasListItems = nextListSibling.children.some(
+            (child) => child.type === "element" && child.tagName === "li"
           );
           if (!hasListItems) {
             parent.children.splice(nextListIndex, 1);
           }
-          
+
           const figure = {
             type: "element",
             tagName: "figure",
